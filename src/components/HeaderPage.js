@@ -10,9 +10,9 @@ function HeaderPage (){
             <h3 id="title2">BOBA TEA FACTORY</h3>
             <p>Voted The New Yorks Best Boba Tea in 2020</p>
             <br></br>
-            <Link to="/orders"></Link>
-            <Button color='orange'>Order Now</Button>
-            <Link/>
+            <Link to="/orders">
+                <Button color='orange'>Order Now!</Button>
+            </Link>
         </div>
     </header>
   

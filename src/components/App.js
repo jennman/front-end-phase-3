@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import LandingPage from "./LandingPage";
 import MainPage from "./MainPage";
+import Orders from "./Orders";
+import Menu from "./Menu";
 
 
 function App() {
@@ -57,6 +59,12 @@ const fetchCustomer = ()=> {
           </Route>
           <Route exact path = '/mainpage'>
           <MainPage bubbleTeas = {bubbleTeas} orders = {orders} />
+          </Route>
+          <Route exact path = '/orders'>
+            <Orders />
+          </Route>
+          <Route exact path = '/menu'>
+            <Menu bubbleTeas = {bubbleTeas} orders = {orders} />
           </Route>
     </Switch>
   );
