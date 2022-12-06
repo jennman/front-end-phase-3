@@ -14,21 +14,27 @@ function App() {
 const fetchBubbleTea =()=> {
     fetch("http://localhost:9292/bubbleteas")
     .then(r => r.json())
-    .then(bubbleTeas => {setBubbleTeas(bubbleTeas)
+    .then(bubbleTeas => {
+      // console.log(bubbleTeas)
+      setBubbleTeas(bubbleTeas)
     
   })
 }
 const fetchCustomer = ()=> {
   fetch("http://localhost:9292/customers")
     .then(r => r.json())
-    .then(customers => {setCustomers(customers)
+    .then(customers => {
+      // console.log(customers)
+       setCustomers(customers)
     })
   }
 
   const fetchOrder = ()=> {
     fetch("http://localhost:9292/orders")
       .then(r => r.json())
-      .then(orders => {setOrders(orders)
+      .then(orders => {
+        console.log(orders)
+        // setOrders(orders)
       })
     }
 
