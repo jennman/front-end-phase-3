@@ -13,8 +13,8 @@ function LandingPage () {
             <div className="overlay"></div>
             <video src={videoBg} autoPlay loop muted />
                 <Link to="/mainpage">
-                {/* <Button color='orange' id="start">Get Started!</Button> */}
-                <Button className="ui orange button large" >Get Started!</Button>
+                <Button color='orange' id="start">Get Started!</Button>
+                {/* <Button className="ui orange button large" >Get Started!</Button> */}
                 </Link>
         </div>
     </div>

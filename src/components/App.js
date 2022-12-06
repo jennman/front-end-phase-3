@@ -56,7 +56,7 @@ const fetchCustomer = ()=> {
             <LandingPage />
           </Route>
           <Route exact path = '/mainpage'>
-            <MainPage bubbleTeas = {bubbleTeas} orders = {orders} />
+          <MainPage bubbleTeas = {bubbleTeas} orders = {orders} />
           </Route>
     </Switch>
   );
