@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.cardImage {
+  display:grid;
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  outline: #3B0B0B;
+  transition: 0.75s;
+  opacity: 1;
+  border: 2px solid black;
+  border-radius: 15px;
+  color: black;
+  
+}
