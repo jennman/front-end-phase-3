@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import React from 'react'
 import { Button } from 'semantic-ui-react'
+import Navbar from "./Navbar";
 function HeaderPage (){
 
     return (
         <header>
+             <Navbar/>
         <div class="header">
             <h1 id="title1">New York</h1>
             <h3 id="title2">BOBA TEA FACTORY</h3>
