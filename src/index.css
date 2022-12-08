@@ -17,13 +17,13 @@ ul{
 	margin: auto;
 	justify-content:flex-start;
 	text-align: center;
-  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: rgba(255, 255, 255, 0.4);
 	/* -webkit-backdrop-filter: blur(10px); */
-  /* backdrop-filter: blur(10px);   */
+  backdrop-filter: blur(10px);  
 }
 .nav-item {
 	list-style: none;
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 	font-family: sans-serif;
 	font-weight: bold;
 	padding: 12px 16px;
@@ -115,18 +115,10 @@ header .header{
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 30px;
 }
+.formBackground{
 
-/* button {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	border-radius: 50px;
-	color: #333;
-	background: #fff;
-	margin-bottom: 50px;
-	box-shadow: 0 3px 20px 0 #0000003b;
+ background-color: #FFA45C;
+  width: 800px;
+  align-items: center;
+  margin: 100px 30px;
 }
-button:hover{
-	cursor: pointer;
-} */
-/* BubbleTeimage */

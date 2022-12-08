@@ -8,7 +8,7 @@ function Navbar (){
             <Link to="/menu" class ="nav-item">Menu</Link>
             <Link to="/orders" class ="nav-item" >Orders</Link>
             <Link to="/customers" class ="nav-item" >Customers</Link>
-            <Link to="/reviews" class ="nav-item">Reviews</Link>
+            {/* <Link to="/reviews" class ="nav-item">Reviews</Link> */}
             </ul>
         </nav>
     )
