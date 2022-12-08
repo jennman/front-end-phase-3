@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
  return(
+  <div>
+    <div className="content-container">
+
+    </div>
   <footer>
-    <div class="footer-copyright text-center">&copy; Developed with ❤️ by Amira, Gabriela and Jenn</div>
+    <div className="footer--pin">&copy; Developed with ❤️ by Amira, Gabriela and Jenn</div>
     <Link></Link>
   </footer>
- 
+  </div>
  )
 }
 export default Footer;

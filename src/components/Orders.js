@@ -1,10 +1,15 @@
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
 import {Button,Form,Container,Message} from 'semantic-ui-react'
 import { getRandomPrice } from "../ramdom/price";
 import { Link } from "react-router-dom";
+import OrderContainer from "./OrderContainer";
 
-function Orders ({customers, bubbleTeas,setOrders}){
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+function Orders ({customers, bubbleTeas,setOrders, orders}){
     // handleChange = (e, { value }) => this.setState({ value })
     const randomPrice = getRandomPrice();
     const [price, setPrice] = useState(0)
@@ -21,7 +26,7 @@ function Orders ({customers, bubbleTeas,setOrders}){
         customer_id: customerID,
         comment: comment
       }
- console.log(newOrders)
+//  console.log(newOrders)
 
     function handleSubmit (e){
         e.preventDefault()
@@ -52,10 +57,10 @@ function Orders ({customers, bubbleTeas,setOrders}){
             </Message>
             </Container>
             <br></br><br></br><br></br>
-            <Container class="formBackground">
-            <Form>
+            <Container className="formBackground">
+            <Form >
             <Form.Field>
-            <h3 class="label">Customer:</h3>
+            <h3 className="label">Customer:</h3>
             <select
                 placeholder="Select a Name"
                 onChange={(e) => setCustomerID(e.target.value)}
@@ -69,7 +74,7 @@ function Orders ({customers, bubbleTeas,setOrders}){
             </select>
             </Form.Field>
             <Form.Field>
-            <h3 class="label">Menu:</h3>
+            <h3 className="label">Menu:</h3>
             <select
                 placeholder="Select a Name"
                 onChange={(e) => setBubbleteaID(e.target.value)}
@@ -84,7 +89,7 @@ function Orders ({customers, bubbleTeas,setOrders}){
             </Form.Field>
             
             <Form.Field>
-            <h3 class="label">Drink Size:</h3>
+            <h3 className="label">Drink Size:</h3>
             <select
                 placeholder="Select the size of your drink"
                 onChange={(e) => setSize(e.target.value)}
@@ -97,10 +102,15 @@ function Orders ({customers, bubbleTeas,setOrders}){
             </Form.Field>
             <Form.TextArea label='Comments' placeholder='Tell us any recomendation' onChange={(e) => setComment(e.target.value)}/>  
             {/* <Button onClick = {handleDelete}>Delete Order</Button> */}
+            
             <Button onClick={handleSubmit}>Submit Order</Button>
             </Form>
             <br></br>
-            <Button>Update Order</Button>
+            <br></br>
+            {/* <OrderContainer orders={orders} setOrders={setOrders}/> */}
+            <br></br>
+            <br></br>
+            
             </Container>
         </div>
     )

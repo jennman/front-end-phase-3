@@ -68,7 +68,22 @@ video {
   margin: 600px 700px 300px 800px;
 }
 /* Footer */
-footer {
+.content-container {
+	min-height: calc(100vh - 714px);
+  }
+  .footer--pin {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	background-color: #FFCDAB;
+  	color: #40403f;
+  	text-align: center;
+	  width: 100%;
+	  height: auto;
+	  line-height: 60px;
+  font-size: 14px;
+  }
+/* footer {
   position: absolute;
   font-size: 12px;
   bottom: 0;
@@ -79,7 +94,7 @@ footer {
   background-color: #FFCDAB;
   color: #40403f;
   text-align: center;
-}
+} */
 /* Header */
 
 /* body{height: 900px;} */
@@ -94,6 +109,7 @@ header {
 	position: relative;
 	overflow: hidden;
 	border-radius: 0 0 85% 85% / 30%;
+	
 }
 header .header{
 	width: 100%;
@@ -122,3 +138,4 @@ header .header{
   align-items: center;
   margin: 100px 30px;
 }
+

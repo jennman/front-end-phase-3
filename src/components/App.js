@@ -6,12 +6,17 @@ import MainPage from "./MainPage";
 import Orders from "./Orders";
 import Menu from "./Menu";
 import Customers from "./Customers";
+import OrderContainer from "./OrderContainer";
+import OrderUpdate from "./OrderUpdate";
+import OrderCard from "./OrderCard";
+import CustomerContainer from "./CustomerContainer";
 
 function App() {
 
   const [bubbleTeas, setBubbleTeas] = useState([])
   const [customers, setCustomers] = useState([])
   const [orders, setOrders] = useState([])  
+  
 
 const fetchBubbleTea =()=> {
     fetch("http://localhost:9292/bubbleteas")
@@ -22,30 +27,22 @@ const fetchBubbleTea =()=> {
     
   })
 }
-const fetchCustomer = ()=> {
-  fetch("http://localhost:9292/customers")
-    .then(r => r.json())
-    .then(customers => {
-     // console.log(customers)
-       setCustomers(customers)
-    })
-  }
 
-  // const fetchOrder = ()=> {
-  //   fetch("http://localhost:9292/orders")
-  //     .then(r => r.json())
-  //     .then(orders => {
-  //       console.log(orders)
-  //       // setOrders(orders)
-  //     })
-  //   }
+
+  const fetchOrder = ()=> {
+    fetch("http://localhost:9292/orders")
+      .then(r => r.json())
+      .then(orders => {
+         //console.log(orders)
+        setOrders(orders)
+      })
+    }
 
   useEffect(() => {
     fetchBubbleTea()
-    fetchCustomer()
-    // fetchOrder()
+    fetchOrder()
   }, [])
-
+ 
   // function addNewCustomerReview(newReview){
   //   fetch("http://localhost:9292/customers", {
   //     method: 'POST',
@@ -68,11 +65,22 @@ const fetchCustomer = ()=> {
             <Menu bubbleTeas = {bubbleTeas} />
           </Route>
           <Route exact path = '/orders'>
-            <Orders bubbleTeas = {bubbleTeas} customers ={customers} setOrders={setOrders}/>
+            <Orders bubbleTeas = {bubbleTeas} customers ={customers} setOrders={setOrders} orders = {orders}/>
+            <OrderContainer orders = {orders} bubbleTeas = {bubbleTeas} customers = {customers}/>
           </Route>
           <Route exact path = '/customers'>
             <Customers customers ={customers} setCustomers={setCustomers}/>
+            <CustomerContainer setCustomers={setCustomers} customers = {customers}/>
           </Route>
+          <Route exact path = '/updateorder/:id'>
+          <OrderUpdate bubbleTeas = {bubbleTeas} customers ={customers} setOrders={setOrders} orders = {orders}/>
+          </Route>
+          {/* <Route exact path = '/orders'>
+          <OrderContainer orders = {orders} bubbleTeas = {bubbleTeas} customers = {customers}/>
+          </Route> */}
+          {/* <OrderCard bubbleTeas = {bubbleTeas} />
+          <CustomerContainer customers = {customers} /> */}
+       
     </Switch>
   );
 }
