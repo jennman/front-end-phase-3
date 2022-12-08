@@ -13,8 +13,7 @@ function CustomerContainer({ customers, setCustomers }) {
       let tempArray = filtered
       tempArray[index]= newData
       customerArray = tempArray
-      console.log("HELLOOO")
-      setFiltered(tempArray)
+      setFiltered([...tempArray])
       setCustomers(tempArray)
       
 

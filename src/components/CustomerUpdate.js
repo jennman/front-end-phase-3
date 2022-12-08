@@ -14,10 +14,10 @@ function CustomerUpdate({ handleUpdate, setCustomer, customer, setWasClicked, in
 
 
     const updateCustomer = {
-        name: name,
-        phone: phone,
-        email: email,
-        address: address
+        name: name || "",
+        phone: phone || "",
+        email: email || "",
+        address: address || ""
         //id:id
     }
     function handleSubmit(e) {
@@ -31,7 +31,6 @@ function CustomerUpdate({ handleUpdate, setCustomer, customer, setWasClicked, in
         })
             .then((r) => r.json())
             .then(data => {
-                console.log(data)
                 handleUpdate(index,data)
                 setWasClicked(false)
             })

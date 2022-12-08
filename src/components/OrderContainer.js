@@ -14,7 +14,6 @@ function OrderContainer({orders, bubbleTeas, customers,setOrders}){
             {/* bubbleTeasArray = bubbleTeas.map(bubbleTea => <OrderCard bubbletea = {bubbleTea} key = {bubbleTea.id}/> */}
                 {/* {bubbleTeasArray} */}
                 {ordersArray}
-               
             </Grid.Row>
         </Grid>
     </Container>
