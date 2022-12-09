@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 function CustomerContainer({ customers, setCustomers }) {
     const [filtered, setFiltered] = useState([])
 
-    console.log(customers)
+   // console.log(customers)
     let handleDelete = (id) => {
         setFiltered(filtered.filter(customer => customer.id !== id))
     }
@@ -29,6 +29,7 @@ function CustomerContainer({ customers, setCustomers }) {
             })
     }, [])
     return (
+        <div >
         <Container style={{ marginTop: "50px" }}>
             <h1 >Last Customers :</h1>
             <Grid columns={3} divided>
@@ -40,7 +41,7 @@ function CustomerContainer({ customers, setCustomers }) {
                 </Grid.Row>
             </Grid>
         </Container>
-
+        </div>
     )
 }
 

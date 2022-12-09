@@ -2,6 +2,7 @@ import { Button, Card,Container,Grid } from 'semantic-ui-react'
 import BubbleTeaContainer from './BubbleTeaContainer'
 import {useHistory} from "react-router-dom"
 
+
 function OrderCard({order,setOrders, orders}){
     
     function handleclickDelete(e){
@@ -35,7 +36,7 @@ function OrderCard({order,setOrders, orders}){
                     <Card.Content>
                     <Card.Header>Order #: {order.id}</Card.Header>
                     <Card.Description>
-                    Comments:
+                    Add Notes:
                     {/* {customers.name} */}
                     {/* {bubbleTea.menu_name} */}
                     {order.comment}

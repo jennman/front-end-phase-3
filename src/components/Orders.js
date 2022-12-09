@@ -3,16 +3,11 @@ import Navbar from "./Navbar";
 import {Button,Form,Container,Message} from 'semantic-ui-react'
 import { getRandomPrice } from "../ramdom/price";
 import { Link } from "react-router-dom";
-import OrderContainer from "./OrderContainer";
-
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 
 function Orders ({customers, bubbleTeas,setOrders, orders}){
     // handleChange = (e, { value }) => this.setState({ value })
     const randomPrice = getRandomPrice();
-    const [price, setPrice] = useState(0)
+   // const [price, setPrice] = useState(0)
     const [size, setSize] = useState('')
     const [bubbleteaID, setBubbleteaID] = useState('')
     const [customerID, setCustomerID] = useState('')
@@ -39,14 +34,18 @@ function Orders ({customers, bubbleTeas,setOrders, orders}){
           .then((data) => {
           setOrders((currentOrder)=>[data, ...currentOrder])
           })
+          //alert(`${orders.id}`)
     } 
 //   console.log(customers)
 
     return(
         <div >
+            <div>
             <Navbar/>
+            </div>
             <br></br>
             <br></br>
+            <div className="forms">
             <Container>
             <Message>
                 <Message.Header>Are you a New Customer?</Message.Header>
@@ -57,7 +56,7 @@ function Orders ({customers, bubbleTeas,setOrders, orders}){
             </Message>
             </Container>
             <br></br><br></br><br></br>
-            <Container className="formBackground">
+            <Container >
             <Form >
             <Form.Field>
             <h3 className="label">Customer:</h3>
@@ -100,7 +99,7 @@ function Orders ({customers, bubbleTeas,setOrders, orders}){
                     <option>Large</option>
             </select>
             </Form.Field>
-            <Form.TextArea label='Comments' placeholder='Tell us any recomendation' onChange={(e) => setComment(e.target.value)}/>  
+            <Form.TextArea label='Add Notes:' placeholder='Any changes? Allergies?' onChange={(e) => setComment(e.target.value)}/>  
             {/* <Button onClick = {handleDelete}>Delete Order</Button> */}
             
             <Button onClick={handleSubmit}>Submit Order</Button>
@@ -112,13 +111,8 @@ function Orders ({customers, bubbleTeas,setOrders, orders}){
             <br></br>
             
             </Container>
+            </div>
         </div>
     )
 }
 export default Orders
-//     function handleDelete(){
-//         // removeOrder(this.state.value)
-//         console.log('delete')
-//     }
-
-// },

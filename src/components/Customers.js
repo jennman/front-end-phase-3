@@ -1,6 +1,6 @@
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
-import {Button,Form,TextArea,Message, Container} from 'semantic-ui-react'
+import {Button,Form,Message, Container} from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 import {useHistory} from "react-router-dom"
 
@@ -17,7 +17,7 @@ function Customers(customers, setCustomers){
         address: address
     }
  //console.log(newOrders)
-let history = useHistory()
+    let history = useHistory()
     const handleCustomer = (e) => {
         history.push(`/orders`)
         };
@@ -37,13 +37,18 @@ let history = useHistory()
 } 
 
     return(
-        <div> 
-            <Navbar/>
+        <div>
+        <div>
+        <Navbar/>
+        </div>
+         
+        <div className="forms"> 
+           
             <br></br><br></br>
             <Container>
                  <br></br><br></br>
             <Message>
-                <Message.Header>Are you a Regitered Customer?</Message.Header>
+                <Message.Header>Are you a Registered Customer?</Message.Header>
                 <p> Submit your order</p>
                 <Link to= '/orders'>
                 <Button color="blue" >Order Now!</Button>
@@ -53,7 +58,8 @@ let history = useHistory()
             <br></br><br></br>
             <Container className="formBackground">
             <Form>
-                <Form.Field required>
+                <br></br>
+                <Form.Field  required >
                 <label>Name</label>
                 <input placeholder=' Insert your Name' onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
@@ -70,8 +76,10 @@ let history = useHistory()
                 <input placeholder=' Insert your Address' onChange={(e) => setAddress(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={handleSubmit}>Submit Order</Button>
+                <br></br><br></br>
             </Form>
             </Container>
+        </div>
         </div>
     )
 }
